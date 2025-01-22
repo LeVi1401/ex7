@@ -1,4 +1,5 @@
 import csv
+from token import STRING
 
 # Global BST root
 ownerRoot = None
@@ -50,24 +51,39 @@ def read_int_safe(prompt):
     """
     Prompt the user for an integer, re-prompting on invalid input.
     """
+    x = input(prompt)
+    while not x.isdigit():
+        x = input("input is invalid " + prompt)
+    return (int)(x)
     pass
 
 def get_poke_dict_by_id(poke_id):
     """
     Return a copy of the Pokemon dict from HOENN_DATA by ID, or None if not found.
     """
+    for pokemon in HOENN_DATA:
+        if pokemon['ID'] == poke_id:
+            return pokemon
+    return None
     pass
 
 def get_poke_dict_by_name(name):
     """
     Return a copy of the Pokemon dict from HOENN_DATA by name, or None if not found.
     """
+    for pokemon in HOENN_DATA:
+        if pokemon['Name'] == name:
+            return pokemon
+    return None
+
     pass
 
 def display_pokemon_list(poke_list):
     """
     Display a list of Pokemon dicts, or a message if empty.
     """
+    for pokemon in poke_list:
+        print(pokemon)
     pass
 
 
@@ -250,9 +266,19 @@ def main_menu():
     5) Print all
     6) Exit
     """
+    print("=== Main Menu ===\n"
+        "1. New Pokedex\n"
+        "2. Existing Pokedex\n"
+        "3. Delete a Pokedex\n"
+        "4. Display owners by number of Pokemon\n"
+        "5. Print All\n"
+        "6. Exit")
     pass
 
 def main():
+    main_menu()
+    choice = read_int_safe("Your choice:")
+    print(get_poke_dict_by_name("Sceptile"))
     """
     Entry point: calls main_menu().
     """
