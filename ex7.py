@@ -385,8 +385,6 @@ def pre_order_print(node):
         return
     print("\nOwner: " + node["owner"])
     display_pokemon_list(node["pokedex"])
-    pre_order_print(node["left"])
-    pre_order_print(node["right"])
     pass
 
 def in_order_print(node):
@@ -395,10 +393,8 @@ def in_order_print(node):
     """
     if node is None:
         return
-    in_order_print(node["left"])
     print("\nOwner: " + node["owner"])
     display_pokemon_list(node["pokedex"])
-    in_order_print(node["right"])
     pass
 
 def post_order_print(node):
@@ -407,8 +403,6 @@ def post_order_print(node):
     """
     if node is None:
         return
-    post_order_print(node["left"])
-    post_order_print(node["right"])
     print("\nOwner: " + node["owner"])
     display_pokemon_list(node["pokedex"])
     pass
@@ -429,7 +423,7 @@ def display_filter_sub_menu(owner_node):
     7) Back
     """
 
-    print("-- Display Filter Menu --\n"
+    print("\n-- Display Filter Menu --\n"
         "1. Only a certain Type\n"
         "2. Only Evolvable\n"
         "3. Only Attack above __\n"
