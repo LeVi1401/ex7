@@ -451,7 +451,6 @@ def display_filter_sub_menu(owner_node):
             display_pokemon_list([pokemon for pokemon in owner_node["pokedex"] if pokemon["Name"].lower()[:len(letters)] == letters.lower()[:len(letters)]])
         if choice == 6:
             display_pokemon_list(owner_node["pokedex"])
-
         if choice > 7 or choice <= 0:
             print("Invalid choice. Please try again.")
         print("-- Display Filter Menu --\n"
