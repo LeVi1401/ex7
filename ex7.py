@@ -487,7 +487,7 @@ def existing_pokedex():
         print("Owner '" + name + "' not found.")
         return
     owner = find_owner_bst(ownerRoot, name)
-    print("-- " + owner["owner"] + "'s Pokedex Menu --\n"
+    print("\n-- " + owner["owner"] + "'s Pokedex Menu --\n"
         "1. Add Pokemon\n"
         "2. Display Pokedex\n"
         "3. Release Pokemon\n"
@@ -505,7 +505,7 @@ def existing_pokedex():
             evolve_pokemon_by_name(owner)
         if choice > 5 or choice <= 0:
             print("Invalid choice. Please try again.")
-        print("-- " + name + "'s Pokedex Menu --\n"
+        print("-- " + owner["owner"] + "'s Pokedex Menu --\n"
             "1. Add Pokemon\n"
             "2. Display Pokedex\n"
             "3. Release Pokemon\n"
