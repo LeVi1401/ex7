@@ -259,6 +259,7 @@ def add_pokemon_to_owner(owner_node):
     id = read_int_safe("Enter Pokemon ID to add: ")
     if id <= 0 or id > 135:
         print("ID " + str(id) + " not found in Honen data.")
+        return
     for pokemon in owner_node["pokedex"]:
         if pokemon['ID'] == id:
             print("Pokemon already in the list. No changes made.")
