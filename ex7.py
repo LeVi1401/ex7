@@ -87,7 +87,7 @@ def display_pokemon_list(poke_list):
     flag = False
     for pokemon in poke_list:
         flag = True
-        print(f"ID: {pokemon['ID']}, Name: {pokemon['Name']}, Type: {pokemon['Type']}, HP: {pokemon['HP']}, Attack: {pokemon["Attack"]}, Can Evolve: {pokemon['Can Evolve']}")
+        print(f"ID: {pokemon['ID']}, Name: {pokemon['Name']}, Type: {pokemon['Type']}, HP: {pokemon['HP']}, Attack: {pokemon['Attack']}, Can Evolve: {pokemon['Can Evolve']}")
     if not flag:
         print("There are no Pokemons in this Pokedex that match the criteria.")
     pass
