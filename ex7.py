@@ -298,6 +298,7 @@ def evolve_pokemon_by_name(owner_node):
     name = str(input("Enter Pokemon Name to evolve: ")).strip()
     pokemon = get_poke_dict_by_name(name)
     if pokemon is None:
+        print("No Pokemon named '" + name + "' in " + owner_node["owner"] + "'s Pokedex.")
         return
     if pokemon["Can Evolve"].upper() == "FALSE":
         print("Pokemon " + pokemon["Name"] + " cannot evolve.")
@@ -457,7 +458,7 @@ def display_filter_sub_menu(owner_node):
 
         if choice > 7 or choice <= 0:
             print("Invalid choice. Please try again.")
-        print("-- Display Filter Menu --\n"
+        print("\n-- Display Filter Menu --\n"
               "1. Only a certain Type\n"
               "2. Only Evolvable\n"
               "3. Only Attack above __\n"
@@ -466,6 +467,7 @@ def display_filter_sub_menu(owner_node):
               "6. All of them!\n"
               "7. Back")
         choice = read_int_safe("Your choice: ")
+    print("Back to Pokedex Menu.")
     pass
 
 
@@ -512,6 +514,7 @@ def existing_pokedex():
             "4. Evolve Pokemon\n"
             "5. Back to Main\n")
         choice = read_int_safe("Your choice: ")
+    print("Back to Main Menu.")
     pass
 
 def main_menu():
@@ -569,15 +572,11 @@ def main():
             sort_owners_by_num_pokemon()
         if choice == 5:
             print_all_owners()
-
-
         if choice > 6 or choice <= 0:
             print("Invalid choice. Please try again.")
         main_menu()
         choice = read_int_safe("Your choice: ")
-    """
-    Entry point: calls main_menu().
-    """
+    print("Goodbye!")
     pass
 
 if __name__ == "__main__":
